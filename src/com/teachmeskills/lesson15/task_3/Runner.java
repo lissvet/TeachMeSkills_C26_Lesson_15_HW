@@ -1,6 +1,5 @@
 package com.teachmeskills.lesson15.task_3;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
