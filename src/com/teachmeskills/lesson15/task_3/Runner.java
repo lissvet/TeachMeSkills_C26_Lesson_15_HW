@@ -1,5 +1,7 @@
 package com.teachmeskills.lesson15.task_3;
 
+import com.teachmeskills.lesson15.task_3.validator.ValidatorSizeCollection;
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
