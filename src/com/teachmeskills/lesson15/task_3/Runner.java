@@ -17,27 +17,32 @@ public class Runner {
         System.out.println("Enter size of the collection of numbers: ");
 
         try {
+
             int numberCollectionSize = scan.nextInt();
-            ArrayList<Integer> numberCollection = new ArrayList<Integer>(numberCollectionSize);
+            if(ValidatorSizeCollection.checkValidSize(numberCollectionSize)) {
+                ArrayList<Integer> numberCollection = new ArrayList<Integer>(numberCollectionSize);
 
-            int counter = 1;
-            while (counter <= numberCollectionSize) {
-                numberCollection.add((int) (Math.random() * 100));
-                counter++;
+                int counter = 1;
+                while (counter <= numberCollectionSize) {
+                    numberCollection.add((int) (Math.random() * 100));
+                    counter++;
+                }
+                System.out.println(numberCollection);
+
+                int result = 0;
+                for (int num : numberCollection) {
+                    result = result + num;
+                }
+
+                System.out.println("Arithmetic mean of collection numbers: " + (result / numberCollectionSize));
+            } else{
+                System.out.println("Wrong size collection.");
             }
-            System.out.println(numberCollection);
-
-            int result = 0;
-            for(int num : numberCollection){
-                result = result + num;
-            }
-
-            System.out.println("Arithmetic mean of collection numbers: " + (result/numberCollectionSize));
 
         } catch (InputMismatchException e){
-            System.out.println("Invalid input character");
+            System.out.println("Invalid input character.");
         } catch (Exception e){
-            System.out.println("Unexpected error");
+            System.out.println("Unexpected error.");
         }
 
     }
